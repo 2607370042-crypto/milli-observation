@@ -548,12 +548,12 @@ p {
   padding: 0;
   overflow: hidden;
   cursor: zoom-in;
-  background: transparent;
+  background: rgba(143, 201, 172, 0.08);
 }
 
 .photo-trigger img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 420ms cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
@@ -606,7 +606,8 @@ p {
 .event-gallery .event-photo-main img,
 .event-gallery figure:not(.event-photo-main) img {
   height: clamp(210px, 23vw, 320px);
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--paper-mint);
 }
 
 .event-copy {
@@ -784,7 +785,7 @@ p {
 .meme-grid img {
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
   border: 1px solid var(--line);
 }
 
@@ -1154,7 +1155,12 @@ p {
 
   .profile-grid,
   .timeline-list {
-    margin-top: 28px;
+    margin-top: 18px;
+  }
+
+  .profile-grid {
+    min-height: calc(100svh - 132px);
+    align-items: center;
   }
 
   .profile-copy p {
@@ -1174,8 +1180,8 @@ p {
   }
 
   .profile-photo img {
-    height: 220px;
-    object-fit: cover;
+    height: clamp(220px, 45vh, 360px);
+    object-fit: contain;
   }
 
   .profile-index {
@@ -1185,12 +1191,15 @@ p {
   .timeline-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: calc(100svh - 132px);
     gap: 0 20px;
   }
 
   .timeline-list li {
     grid-template-columns: 64px 1fr;
     gap: 12px;
+    align-content: center;
     padding: 10px 0;
   }
 
@@ -1217,17 +1226,32 @@ p {
     margin: 18px 0 22px;
   }
 
+  .photography {
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+  }
+
   .photography-intro p {
     font-size: 0.74rem;
     line-height: 1.55;
   }
 
   .photo-grid {
+    min-height: 0;
+    grid-template-rows: 1fr 1fr;
     gap: 16px;
   }
 
+  .photo-sample {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+  }
+
   .photo-trigger {
-    height: 18vh;
+    height: auto;
+    min-height: 0;
+    flex: 1;
     aspect-ratio: auto;
   }
 
@@ -1286,7 +1310,9 @@ p {
   }
 
   .research-grid {
-    margin-top: 30px;
+    min-height: calc(100svh - 132px);
+    align-items: center;
+    margin-top: 0;
   }
 
   .research-question {
@@ -1298,23 +1324,52 @@ p {
   }
 
   .meme-wall {
-    gap: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 14px;
+  }
+
+  .meme-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .meme-heading > p {
+    margin: 0;
   }
 
   .meme-heading h2 {
+    display: flex;
+    gap: 10px;
     font-size: clamp(2rem, 5.5vh, 3.2rem);
   }
 
+  .meme-heading h2 i {
+    display: inline;
+  }
+
   .meme-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
     gap: 10px;
   }
 
   .meme-grid img {
-    max-height: 21vh;
+    height: min(24vh, 190px);
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .meme-grid img:nth-child(n) {
+    grid-column: auto;
+    margin-top: 0;
   }
 
   .status-strip {
-    padding-top: 20px;
+    grid-template-columns: 140px 1fr;
+    padding-top: 12px;
   }
 
   .status-strip li {
