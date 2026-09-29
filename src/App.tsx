@@ -254,7 +254,7 @@ function App() {
                 alt="母芸菲站在雪山前的旅行照片"
                 width="768"
                 height="1024"
-                loading="lazy"
+                loading="eager"
               />
               <figcaption>FIELD NOTE / 旅行也是观察的一部分</figcaption>
             </figure>
@@ -341,66 +341,68 @@ function App() {
           hidden={activePage !== '04'}
         >
           <SectionHeading number="04" label="工作现场" title="从活动落地到客诉闭环" />
-          <article className="event-story">
-            <div className="event-gallery" aria-label="飞书 AI 先锋大赛活动照片">
-              <figure className="event-photo-main">
-                <img
-                  src="./assets/ai-competition.jpg"
-                  alt="2026 飞书 AI 先锋大赛先进制造专场华南赛区半决赛现场合影"
-                  width="1800"
-                  height="1200"
-                  loading="lazy"
-                />
-                <figcaption>2026.03.29 / 华南赛区半决赛</figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="./assets/ai-booth.jpg"
-                  alt="2026 飞书 AI 先锋大赛先进制造专场活动展台"
-                  width="768"
-                  height="1024"
-                  loading="lazy"
-                />
-                <figcaption>EVENT NOTE / 活动展台</figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="./assets/ai-stage.jpg"
-                  alt="飞书活动现场讲解画面"
-                  width="768"
-                  height="1024"
-                  loading="lazy"
-                />
-                <figcaption>EVENT NOTE / 现场讲解</figcaption>
-              </figure>
-            </div>
-            <div className="event-copy">
-              <p className="sample-label">WORK SAMPLE 01</p>
-              <h3>2026 飞书 AI 先锋大赛<br />先进制造专场</h3>
-              <p>
-                我与 mentor 一起参与落地了三大赛区半决赛及全国十强赛，在现场见到了许多真实使用 AI 解决问题的人。
-              </p>
-            </div>
-          </article>
+          <div className="work-content">
+            <article className="event-story">
+              <div className="event-gallery" aria-label="飞书 AI 先锋大赛活动照片">
+                <figure className="event-photo-main">
+                  <img
+                    src="./assets/ai-competition.jpg"
+                    alt="2026 飞书 AI 先锋大赛先进制造专场华南赛区半决赛现场合影"
+                    width="1800"
+                    height="1200"
+                    loading="eager"
+                  />
+                  <figcaption>2026.03.29 / 华南赛区半决赛</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="./assets/ai-booth.jpg"
+                    alt="2026 飞书 AI 先锋大赛先进制造专场活动展台"
+                    width="768"
+                    height="1024"
+                    loading="eager"
+                  />
+                  <figcaption>EVENT NOTE / 活动展台</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="./assets/ai-stage.jpg"
+                    alt="飞书活动现场讲解画面"
+                    width="768"
+                    height="1024"
+                    loading="eager"
+                  />
+                  <figcaption>EVENT NOTE / 现场讲解</figcaption>
+                </figure>
+              </div>
+              <div className="event-copy">
+                <p className="sample-label">WORK SAMPLE 01</p>
+                <h3>2026 飞书 AI 先锋大赛<br />先进制造专场</h3>
+                <p>
+                  我与 mentor 一起参与落地了三大赛区半决赛及全国十强赛，在现场见到了许多真实使用 AI 解决问题的人。
+                </p>
+              </div>
+            </article>
 
-          <article className="flow-story">
-            <div className="flow-intro">
-              <p className="sample-label">WORK SAMPLE 02</p>
-              <h3>客诉闭环 Demo</h3>
-              <p>
-                智能体接收妙记或指令，通过受控工具写入客诉收集表，再由 Base 工作流完成校验、信息提取和派单；智能体也可以读取案例库，回答相关客诉咨询。
-              </p>
-            </div>
-            <ol className="flow-list">
-              {complaintFlow.map((step, index) => (
-                <li key={step}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <p>{step}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="flow-note">为保护业务信息，此处使用脱敏后的结构示意，不展示原始案例与界面数据。</p>
-          </article>
+            <article className="flow-story">
+              <div className="flow-intro">
+                <p className="sample-label">WORK SAMPLE 02</p>
+                <h3>客诉闭环 Demo</h3>
+                <p>
+                  智能体接收妙记或指令，通过受控工具写入客诉收集表，再由 Base 工作流完成校验、信息提取和派单；智能体也可以读取案例库，回答相关客诉咨询。
+                </p>
+              </div>
+              <ol className="flow-list">
+                {complaintFlow.map((step, index) => (
+                  <li key={step}>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <p>{step}</p>
+                  </li>
+                ))}
+              </ol>
+              <p className="flow-note">为保护业务信息，此处使用脱敏后的结构示意，不展示原始案例与界面数据。</p>
+            </article>
+          </div>
         </section>
 
         <section

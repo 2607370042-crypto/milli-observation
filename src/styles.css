@@ -1260,12 +1260,31 @@ p {
   }
 
   .work .section-heading {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
+  }
+
+  .work {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .work-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    min-height: 0;
+  }
+
+  .event-story {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .event-gallery .event-photo-main img,
   .event-gallery figure:not(.event-photo-main) img {
-    height: 14vh;
+    height: clamp(74px, 16vh, 132px);
   }
 
   .event-story figcaption {
@@ -1273,6 +1292,7 @@ p {
   }
 
   .event-copy {
+    display: block;
     margin-top: 18px;
     padding-top: 14px;
   }
@@ -1290,10 +1310,17 @@ p {
   }
 
   .flow-story {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 8px 0 0 28px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .flow-list {
     margin-top: 18px;
-    padding-top: 12px;
-    column-gap: 40px;
-    row-gap: 6px;
   }
 
   .flow-list li {
@@ -1305,7 +1332,8 @@ p {
   }
 
   .flow-note {
-    margin-top: 0;
+    grid-column: auto;
+    margin-top: auto;
     font-size: 0.6rem;
   }
 
