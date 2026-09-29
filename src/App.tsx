@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import {
   complaintFlow,
   creatorTopics,
@@ -104,6 +104,10 @@ function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [activePage])
+
   useEffect(() => {
     if (!menuOpen) return
     const onKeyDown = (event: KeyboardEvent) => {
@@ -117,7 +121,6 @@ function App() {
     setActivePage(id)
     setMenuOpen(false)
     window.history.replaceState(null, '', `#${target}`)
-    window.scrollTo({ top: 0, behavior: 'auto' })
   }
 
   return (
