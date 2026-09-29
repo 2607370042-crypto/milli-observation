@@ -62,14 +62,6 @@ export const photos: PhotoSample[] = [
   },
   {
     id: 'FRAME 02',
-    label: '川西',
-    meta: 'WEST SICHUAN / SNOW',
-    image: './assets/snow-mountain.jpg',
-    alt: '母芸菲站在川西雪山前的旅行照片',
-    note: '拍摄时，我习惯先找环境里的关系，再寻找人物最自然的位置。',
-  },
-  {
-    id: 'FRAME 03',
     label: '大理',
     meta: 'DALI / LAKE',
     image: './assets/lakeside.jpg',
@@ -77,7 +69,7 @@ export const photos: PhotoSample[] = [
     note: '照片不只记录去了哪里，也保留当时的天气、光线和情绪。',
   },
   {
-    id: 'FRAME 04',
+    id: 'FRAME 03',
     label: '釜山',
     meta: 'BUSAN / STREET',
     image: './assets/seoul.jpg',
@@ -85,7 +77,7 @@ export const photos: PhotoSample[] = [
     note: '街道、动作和一顶红帽子，共同组成一张有记忆点的画面。',
   },
   {
-    id: 'FRAME 05',
+    id: 'FRAME 04',
     label: '首尔',
     meta: 'SEOUL / DUSK',
     image: './assets/nightfall.jpg',
