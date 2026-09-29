@@ -375,6 +375,9 @@ function App() {
                   <figcaption>EVENT NOTE / 现场讲解</figcaption>
                 </figure>
               </div>
+              <p className="event-background">
+                这是一场飞书面向先进制造行业举办的 AI 落地案例赛事，2026 年从 3 月分区半决赛走到 4 月 21 日北京全国十强赛，聚焦智能制造核心场景，覆盖研发设计、生产制造、供应链协同、销售服务全产业链，推动 AI 在先进制造领域规模化落地。
+              </p>
               <div className="event-copy">
                 <p className="sample-label">WORK SAMPLE 01</p>
                 <h3>2026 飞书 AI 先锋大赛<br />先进制造专场</h3>

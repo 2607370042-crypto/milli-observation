@@ -610,6 +610,15 @@ p {
   background: var(--paper-mint);
 }
 
+.event-background {
+  max-width: 720px;
+  margin: 34px 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
 .event-copy {
   display: grid;
   grid-template-columns: 0.65fr 1.35fr 1fr;
@@ -1295,6 +1304,14 @@ p {
     display: block;
     margin-top: 18px;
     padding-top: 14px;
+  }
+
+  .event-background {
+    max-width: 96%;
+    margin: auto 0;
+    padding-left: 12px;
+    font-size: 0.7rem;
+    line-height: 1.55;
   }
 
   .event-story h3,
